@@ -1,0 +1,1 @@
+[Eshu](https://en.wikipedia.org/wiki/Eshu) is a [Go](https://golang.org) package to consume [hyperledger-fabric](https://github.com/hyperledger/fabric) events and send them into a supported queue system (Kafka so far)
