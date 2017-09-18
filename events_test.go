@@ -5,13 +5,13 @@ import (
 	"time"
 )
 
-type MockQueueClient struct{}
+type mockQueueClient struct{}
 
-func (*MockQueueClient) Send(d []byte) error {
+func (*mockQueueClient) Send(d []byte) error {
 	return nil
 }
 
-func (*MockQueueClient) Close() error {
+func (*mockQueueClient) Close() error {
 	return nil
 }
 
@@ -19,7 +19,7 @@ func TestCreateConnectorOK(t *testing.T) {
 	ech := map[string][]string{
 		"ch-01": []string{"event1"},
 	}
-	if _, err := NewConnector("test.address", time.Second, new(MockQueueClient), ech); err != nil {
+	if _, err := NewConnector("test.address", time.Second, new(mockQueueClient), ech); err != nil {
 		t.Fatalf("Expected nil error, got error: %v", err)
 	}
 }
